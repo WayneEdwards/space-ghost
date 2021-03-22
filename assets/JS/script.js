@@ -1,27 +1,46 @@
 $(document).ready(function() {
-    $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"));
-});
 
-function hoursTracker() {
+
+    // workDay function in header
+    workdayTime();
+
+    function workdayTime() {
+        var workday = $("#currentDay").text(moment().format("MMMM Do YYYY, h:mm:ss a"))
+        setTimeout(workdayTime, 1000);
+    };
+
     var currentHour = moment().hour();
 
-    $(".time-block").each(function() {
-        var timeBlockHour = parseInt($(this).attr("id").split("hour")[1]);
-        console.log(timeBlockHour, currentHour)
+    $(".saveBtn").on("click", function() {
+        var textData = $(this).siblings("description").val();
+        var timeClock = $(this).parent().attr('id');
+        console.log(textData, timeClock);
 
-        if (timeBlockHour < currentHour) {
-            $(this).addClass("past");
-            $(this).removeclass("present");
-            $(this).removeclass("future");
-        } else if (timeBlockHour === currentHour) {
-            $(this).addClass("present");
-            $(this).removeclass("past");
-            $(this).removeClass("future");
-        } else(timeBlockHour > currentHour) {
-            $(this).addClass("future");
-            $(this).removeclass("past");
-            $(this).removeClass("present");
+        localStorage.setItem(timeClock, textData);
+    });
+
+
+    for (let i = 9; i <= 18; i++) {
+        $('#' + i).children('textarea').val(localStorage.getItem(i))
+        if (i < currentHour) {
+            $('#' + i).children('textarea').addClass("past")
+        } else if (currentHour === i) {
+            $("#" + i).children('textarea').addClass("present")
+        } else {
+            $("#" + i).children('textarea').addClass("future")
         }
+    }
 
-    })
-}
+})
+
+// localStorage
+$("#9 .description").val(localStorage).getItem("9");
+$("#10 .description").val(localStorage).getItem("10");
+$("#11 .description").val(localStorage).getItem("11");
+$("#12 .description").val(localStorage).getItem("12");
+$("#13 .description").val(localStorage).getItem("13");
+$("#14 .description").val(localStorage).getItem("14");
+$("#15 .description").val(localStorage).getItem("15");
+$("#16 .description").val(localStorage).getItem("16");
+$("#17 .description").val(localStorage).getItem("17");
+$("#18 .description").val(localStorage).getItem("18");
