@@ -1,8 +1,7 @@
 # Work Day Scheduler.
 Challenge #5!
-GitHub Pge link:
+GitHub Pge link:https://wayneedwards.github.io/space-ghost/
 Screenshot:![Workday Scheduler screenshot](https://user-images.githubusercontent.com/71949043/112086624-cb9efd80-8b49-11eb-8c7b-f3c7322c988c.png)
-
 
 User Story:
 AS AN employee with a busy schedule
