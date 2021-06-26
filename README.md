@@ -1,5 +1,6 @@
-# Work Day Scheduler.
-Challenge #5!
+# Module #5 Challenge
+## Work Day Scheduler
+
 GitHub Page link:https://wayneedwards.github.io/space-ghost/
 Screenshot:![Workday Scheduler screenshot](https://user-images.githubusercontent.com/71949043/112086624-cb9efd80-8b49-11eb-8c7b-f3c7322c988c.png)
 
